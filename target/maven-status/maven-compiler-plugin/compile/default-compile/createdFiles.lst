@@ -1,0 +1,12 @@
+com\project\dao\ShopDAO.class
+com\project\dao\ManagerDAO.class
+com\project\dao\CRUD.class
+com\project\dao\PhotoDAO.class
+com\project\logic\Dish.class
+com\project\logic\Manager.class
+com\project\logic\Photo.class
+com\project\dao\DishDAO.class
+com\project\utils\HibernateUtil.class
+com\project\controller\Authorisation.class
+com\project\controller\RegistrationServlet.class
+com\project\logic\Shop.class

@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:54:41 +0300] "GET /EatService/profile.jsp HTTP/1.1" 200 1161 http-bio-8082-exec-1 1820
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:54:41 +0300] "GET /EatService/img/plus.png HTTP/1.1" 304 - http-bio-8082-exec-3 16
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:54:41 +0300] "GET /EatService/style.css HTTP/1.1" 304 - http-bio-8082-exec-2 40
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:54:43 +0300] "GET /EatService/profile.jsp HTTP/1.1" 200 1161 http-bio-8082-exec-5 4
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:54:47 +0300] "GET /EatService/profile.jsp HTTP/1.1" 200 1161 http-bio-8082-exec-6 6
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:54:50 +0300] "GET /EatService/authorisation.jsp HTTP/1.1" 200 1601 http-bio-8082-exec-7 300
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:54:53 +0300] "GET /EatService/registration.jsp HTTP/1.1" 200 2174 http-bio-8082-exec-8 959
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:55:22 +0300] "POST /EatService/RegistrationServlet HTTP/1.1" 200 1601 http-bio-8082-exec-9 10458
+0:0:0:0:0:0:0:1 - - [11/Apr/2015:18:55:35 +0300] "POST /EatService/AuthorisationServlet HTTP/1.1" 200 1161 http-bio-8082-exec-10 142

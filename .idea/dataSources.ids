@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - eat_service_db@localhost" uuid="31640d21-6714-4bc4-8cee-51ac1cea66e6">
+    <database-info product="MySQL" version="5.6.22-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="eat_service_db"/>
+    <table name="dish" schema="" catalog="eat_service_db" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="description" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="price" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="shop_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_snfjqv5lu60surtwlosyiqjtx" columns="shop_id" ref-table="shop" ref-schema="" ref-catalog="eat_service_db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_snfjqv5lu60surtwlosyiqjtx" unique="false" columns="shop_id"/>
+    </table>
+    <table name="manager" schema="" catalog="eat_service_db" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="login" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="photo_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_kcfghh4591jeab2bvuq3198q1" columns="photo_id" ref-table="photo" ref-schema="" ref-catalog="eat_service_db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_5ybs5whp732qf6f0e0c3k55so" table="shop" schema="" catalog="eat_service_db" columns="manager_id"/>
+      <index name="UK_ch4c0h9mgdd2c5lategqkpsyi" unique="true" columns="email"/>
+      <index name="FK_kcfghh4591jeab2bvuq3198q1" unique="false" columns="photo_id"/>
+    </table>
+    <table name="photo" schema="" catalog="eat_service_db" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="image" sqlType="LONGBLOB" precision="2147483647" scale="0" nullable="true" jdbcType="-4"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_kcfghh4591jeab2bvuq3198q1" table="manager" schema="" catalog="eat_service_db" columns="photo_id"/>
+      <exported-key name="FK_b4morbp6by9q6paa48m2wxv2k" table="shop" schema="" catalog="eat_service_db" columns="photo_id"/>
+    </table>
+    <table name="shop" schema="" catalog="eat_service_db" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="description" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="manager_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="photo_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_5ybs5whp732qf6f0e0c3k55so" columns="manager_id" ref-table="manager" ref-schema="" ref-catalog="eat_service_db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_b4morbp6by9q6paa48m2wxv2k" columns="photo_id" ref-table="photo" ref-schema="" ref-catalog="eat_service_db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_snfjqv5lu60surtwlosyiqjtx" table="dish" schema="" catalog="eat_service_db" columns="shop_id"/>
+      <index name="FK_5ybs5whp732qf6f0e0c3k55so" unique="false" columns="manager_id"/>
+      <index name="FK_b4morbp6by9q6paa48m2wxv2k" unique="false" columns="photo_id"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - eat_service_db@localhost" uuid="31640d21-6714-4bc4-8cee-51ac1cea66e6">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>eat_service_db.*</schema-pattern>
+      <default-schemas>eat_service_db.*</default-schemas>
+    </data-source>
+  </component>
+</project>
