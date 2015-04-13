@@ -27,7 +27,7 @@ public class DishDAO implements CRUD<Dish> {
     }
 
     @Override
-    public Long create(Dish object) throws SQLException {
+    public Long create(Dish object) {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
@@ -46,7 +46,7 @@ public class DishDAO implements CRUD<Dish> {
     }
 
     @Override
-    public Dish get(Long id) throws SQLException {
+    public Dish get(Long id) {
         Session session = sessionFactory.openSession();
         Dish dish = null;
         try {
@@ -64,7 +64,7 @@ public class DishDAO implements CRUD<Dish> {
     }
 
     @Override
-    public void update(Dish object) throws SQLException {
+    public void update(Dish object)  {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
@@ -80,7 +80,7 @@ public class DishDAO implements CRUD<Dish> {
     }
 
     @Override
-    public void delete(Dish object) throws SQLException {
+    public void delete(Dish object)  {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
@@ -96,7 +96,7 @@ public class DishDAO implements CRUD<Dish> {
     }
 
     @Override
-    public List<Dish> getAll() throws SQLException {
+    public List<Dish> getAll()  {
         Session session = sessionFactory.openSession();
         try {
             return session.createCriteria(Dish.class).list();

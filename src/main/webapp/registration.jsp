@@ -21,7 +21,7 @@
 
         <h2><b>Реєстрація</b></h2>
         <br>
-        <form action="RegistrationServlet" method="post" style="align-text: center">
+        <form enctype="multipart/form-data" action="RegistrationServlet"  method="post" style="align-text: center">
             <p class="edit_point">Логін</p>
             <p class="edit_point"><input id="userLogin" name="userLogin" type="text" placeholder="Введіть бажаний логін" ></p>
             <p class="edit_point">Пароль</p>
@@ -40,8 +40,5 @@
         </form>
     </div>
 </div>
-
-
-
 </body>
 </html>

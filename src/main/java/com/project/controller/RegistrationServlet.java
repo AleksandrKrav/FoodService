@@ -30,19 +30,19 @@ public class RegistrationServlet extends HttpServlet {
         String email = req.getParameter("email");
         String name = req.getParameter("name");
 
-//        Part filePart = req.getPart("userPhoto"); // Retrieves <input type="file" name="file">
-//        InputStream fileContent = filePart.getInputStream();
-//        byte[] image = new byte[fileContent.available()];
-//
-//        while (fileContent.available() > 0){
-//            for (int i = 0; i < image.length; i++) {
-//                image[i] =(byte) fileContent.read();
-//            }
-//        }
+        Part filePart = req.getPart("userPhoto"); // Retrieves <input type="file" name="file">
+        InputStream fileContent = filePart.getInputStream();
+        byte[] image = new byte[fileContent.available()];
+
+        while (fileContent.available() > 0){
+            for (int i = 0; i < image.length; i++) {
+                image[i] =(byte) fileContent.read();
+            }
+        }
 
 
 
-        ManagerDAO managerDAO = ManagerDAO.getIntance();
+        ManagerDAO managerDAO = ManagerDAO.getInstance();
 
         Manager manager = new Manager();
         manager.setLogin(userLogin);
@@ -51,20 +51,20 @@ public class RegistrationServlet extends HttpServlet {
         manager.setName(name);
 
         Photo photo = new Photo();
-//        photo.setImage(image);
-        photo.setImage(new byte[]{1, 2, 3, 4});
+        photo.setImage(image);
+//        photo.setImage(new byte[]{1, 2, 3, 4});
 
         PhotoDAO photoDAO = PhotoDAO.getIntance();
         photoDAO.create(photo);
 
         manager.setPhoto(photo);
         managerDAO.create(manager);
-//        fileContent.close();
+        fileContent.close();
         
-        req.getRequestDispatcher("authorisation.jsp").forward(req, resp);
+        req.getRequestDispatcher("/AuthorisationServlet").forward(req, resp);
         }
 
-        if (req.getParameter("cancel") != null)req.getRequestDispatcher("authorisation.jsp").forward(req, resp);
+        if (req.getParameter("cancel") != null)req.getRequestDispatcher("/AuthorisationServlet").forward(req, resp);
 
     }
 

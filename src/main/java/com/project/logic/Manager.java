@@ -25,7 +25,10 @@ public class Manager {
     @OneToOne
     private Photo photo;
 
-//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "manager", cascade = CascadeType.ALL)
+    public Manager() {
+    }
+
+    //    @OneToMany(fetch = FetchType.EAGER, mappedBy = "manager", cascade = CascadeType.ALL)
 //    private Set<Shop> shops = new HashSet<>();
 
     public Long getId() {

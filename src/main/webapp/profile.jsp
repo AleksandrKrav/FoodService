@@ -1,8 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <meta charset="utf-8f">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <a href="RegistrationServlet?userLogin=${userLogin}"></a>
     <title>Профіль</title>
 </head>
 <body>
@@ -16,20 +18,23 @@
 </nav>
 <div class="context">
     <div class="centralbar">
-        <h2 ><b>Профіль користувача: getLogin</b></h2>
-        <p>фотка</p>
-        <p>ім'я</p>
-        <p>email</p>
-        <p style="font-size: 20px">Додати власне кафе  <a href="newShop.jsp"><img src="img/plus.png" width="32" height="32" /></a></p>
+        <form action="ProfileServlet"  enctype="multipart/form-data" method="post">
+        <h2 ><b>Профіль користувача: ${userLogin}</b></h2>
+        <p>фотка: <%--img src="img/${photo}.jpg"--%></p>
+        <p>ім'я: ${name}</p>
+        <p>email: ${email}</p>
+        <p style="font-size: 20px">Додати кафе  <a href="newShop.jsp"><img src="img/plus.png" width="32" height="32" /></a></p>
+        <c:forEach var="cafe" items="${list}">
+            Кафе: ${cafe}
+        </c:forEach>
+    </form>
     </div>
 </div>
 <div class = rightbar style="padding-top: 100px">
-    <div >
+        <div >
         <p > Ви ще не авторизувались?</p>
         <a href =authorisation.jsp> Увійти</a>
     </div>
-
-
 </div>
 </body>
 </html>

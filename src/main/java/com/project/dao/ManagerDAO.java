@@ -19,14 +19,6 @@ import java.util.Set;
  */
 public class ManagerDAO implements CRUD<Manager> {
 
-    private static ManagerDAO instance;
-
-    public static ManagerDAO getIntance() {
-        if (instance == null) {
-            instance = new ManagerDAO();
-        }
-        return instance;
-    }
 //    public static void main(String[] args) throws SQLException{
 //        ManagerDAO managerDAO = new ManagerDAO();
 //
@@ -123,11 +115,20 @@ public class ManagerDAO implements CRUD<Manager> {
 //
 //    }
 
+
+    private static ManagerDAO instance;
     private SessionFactory sessionFactory;
+
     private ManagerDAO(){
         this.sessionFactory = HibernateUtil.getSessionFactory();
     }
 
+    public static ManagerDAO getInstance() {
+        if (instance == null) {
+            instance = new ManagerDAO();
+        }
+        return instance;
+    }
 
 
     @Override
@@ -149,7 +150,7 @@ public class ManagerDAO implements CRUD<Manager> {
     }
 
     @Override
-    public Manager get(Long id) throws SQLException {
+    public Manager get(Long id)  {
         Session session = sessionFactory.openSession();
         Manager managerUser = null;
         try {
@@ -167,7 +168,7 @@ public class ManagerDAO implements CRUD<Manager> {
     }
 
     @Override
-    public void update(Manager object)throws SQLException {
+    public void update(Manager object) {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
@@ -183,7 +184,7 @@ public class ManagerDAO implements CRUD<Manager> {
     }
 
     @Override
-    public void delete(Manager object)throws SQLException {
+    public void delete(Manager object) {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();

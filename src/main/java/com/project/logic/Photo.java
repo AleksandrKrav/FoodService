@@ -22,6 +22,8 @@ public class Photo {
     @Lob
     private byte[] image;
 
+    public Photo() {
+    }
 
     public Integer getId() {
         return id;

@@ -13,13 +13,20 @@ import java.util.List;
  * Created by Oleksandr on 4/7/2015.
  */
 public class ShopDAO implements CRUD<Shop> {
+    private static ShopDAO instance;
     private SessionFactory sessionFactory;
-    ShopDAO(){
+    private ShopDAO(){
         this.sessionFactory = HibernateUtil.getSessionFactory();
     }
 
+    public static ShopDAO getInstance(){
+        if (instance == null){
+            instance = new ShopDAO();
+        }
+        return instance;
+    }
     @Override
-    public Long create(Shop object)throws SQLException {
+    public Long create(Shop object) {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
@@ -37,7 +44,7 @@ public class ShopDAO implements CRUD<Shop> {
     }
 
     @Override
-    public Shop get(Long id) throws SQLException {
+    public Shop get(Long id) {
         Session session = sessionFactory.openSession();
         Shop shop = null;
         try {
@@ -55,7 +62,7 @@ public class ShopDAO implements CRUD<Shop> {
     }
 
     @Override
-    public void update(Shop object)throws SQLException {
+    public void update(Shop object) {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
@@ -71,7 +78,7 @@ public class ShopDAO implements CRUD<Shop> {
     }
 
     @Override
-    public void delete(Shop object) throws SQLException{
+    public void delete(Shop object) {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
@@ -87,7 +94,7 @@ public class ShopDAO implements CRUD<Shop> {
     }
 
     @Override
-    public List<Shop> getAll() throws SQLException{
+    public List<Shop> getAll() {
         Session session = sessionFactory.openSession();
         try {
             return session.createCriteria(Shop.class).list();

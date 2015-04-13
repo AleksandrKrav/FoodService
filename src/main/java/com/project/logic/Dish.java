@@ -24,6 +24,8 @@ public class Dish {
     @ManyToOne
     private Shop shop;
 
+    public Dish() {
+    }
 
     public Integer getId() {
         return id;

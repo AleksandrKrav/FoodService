@@ -47,7 +47,7 @@ public class PhotoDAO implements CRUD<Photo> {
     }
 
     @Override
-    public Photo get(Long id) throws SQLException{
+    public Photo get(Long id) {
         Session session = sessionFactory.openSession();
         Photo photo = null;
         try {
@@ -65,7 +65,7 @@ public class PhotoDAO implements CRUD<Photo> {
     }
 
     @Override
-    public void update(Photo object)throws SQLException {
+    public void update(Photo object) {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
@@ -81,7 +81,7 @@ public class PhotoDAO implements CRUD<Photo> {
     }
 
     @Override
-    public void delete(Photo object) throws SQLException {
+    public void delete(Photo object) {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
