@@ -14,7 +14,7 @@ public class Photo {
     @Id
     @Column(name= "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(name = "name", length=20)
     private String name;
@@ -25,11 +25,11 @@ public class Photo {
     public Photo() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 

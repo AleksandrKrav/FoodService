@@ -18,15 +18,15 @@
 
 <div class="context">
     <div class="centralbar">
-        <form action="AboutShopServlet" method="get">
+        <%--<form action="AboutShopServlet" method="get">--%>
             <h2><b>Детальна інформація про кафе</b></h2>
 
-            <p>Назва : </p>
+            <p>Назва : ${shop.name}</p>
 
-            <p>Опис : </p>
+            <p>Опис : ${shop.description}</p>
 
             <p>Страви : </p>
-        </form>
+        <%--</form>--%>
     </div>
 </div>
 </body>

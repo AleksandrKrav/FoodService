@@ -17,7 +17,7 @@ public class Dish {
     @Column(name = "name", length=20)
     private String name;
     @Column(name = "price", length = 5)
-    private Float price;
+    private String price;
     @Column(name = "description", length = 100)
     private String description;
 
@@ -43,13 +43,20 @@ public class Dish {
         this.name = name;
     }
 
-    public Float getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(String price) {
         this.price = price;
     }
+    //    public Double getPrice() {
+//        return price;
+//    }
+//
+//    public void setPrice(Double price) {
+//        this.price = price;
+//    }
 
     public String getDescription() {
         return description;

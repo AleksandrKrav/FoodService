@@ -13,8 +13,11 @@ import java.util.List;
  * Created by Oleksandr on 4/7/2015.
  */
 public class ShopDAO implements CRUD<Shop> {
+
+
     private static ShopDAO instance;
     private SessionFactory sessionFactory;
+
     private ShopDAO(){
         this.sessionFactory = HibernateUtil.getSessionFactory();
     }
@@ -59,6 +62,25 @@ public class ShopDAO implements CRUD<Shop> {
             session.close();
         }
         return shop;
+    }
+
+
+    public List<Shop> getByManagerId(Long id) {
+        Session session = sessionFactory.openSession();
+        List<Shop> shops = null;
+        try {
+            session.getTransaction().begin();
+            shops =  session.createQuery("from Shop s where s.manager.id = :managerId")
+                    .setParameter("managerId", id).list();
+            session.getTransaction().commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        finally {
+            session.close();
+        }
+        return shops;
     }
 
     @Override

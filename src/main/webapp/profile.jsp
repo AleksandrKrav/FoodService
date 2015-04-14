@@ -20,14 +20,25 @@
     <div class="centralbar">
         <form action="ProfileServlet"  enctype="multipart/form-data" method="post">
         <h2 ><b>Профіль користувача: ${userLogin}</b></h2>
-        <p>фотка: <%--img src="img/${photo}.jpg"--%></p>
+        <p>фотка:<img src="image?photoId=${photoId}" width="32px" height="32px"></p>
         <p>ім'я: ${name}</p>
         <p>email: ${email}</p>
-        <p style="font-size: 20px">Додати кафе  <a href="newShop.jsp"><img src="img/plus.png" width="32" height="32" /></a></p>
-        <c:forEach var="cafe" items="${list}">
-            Кафе: ${cafe}
+            <p class="edit_point">
+            </p>
+            <%--<p style="font-size: 20px">Додати кафе  <a href="AddShopServlet" ><img src="img/plus.png" width="32" height="32" /></a></p>--%>
+        <c:forEach items="${shopList}" var="shop" >
+            <div>
+                Кафе: ${shop.name}
+                <a href="AboutShopServlet?shopId=${shop.id}">Shop details</a>
+            </div>
         </c:forEach>
     </form>
+
+        <form action="RedirectToAddShopServlet?userLogin=${userLogin}" enctype="multipart/form-data" method="post">
+            <input type = "submit" name = "add" value="Додати кафе">
+            <%--<input type="hidden" name="userLogin" value="${userLogin}"/>--%>
+        </form>
+
     </div>
 </div>
 <div class = rightbar style="padding-top: 100px">

@@ -167,6 +167,24 @@ public class ManagerDAO implements CRUD<Manager> {
         return managerUser;
     }
 
+    public Manager getByLogin(String login) {
+        Session session = sessionFactory.openSession();
+        Manager managerUser = null;
+        try {
+            session.getTransaction().begin();
+            managerUser = (Manager) session.createQuery("from Manager m where m.login = :login")
+                    .setParameter("login",login).uniqueResult();
+            session.getTransaction().commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        finally {
+            session.close();
+        }
+        return managerUser;
+    }
+
     @Override
     public void update(Manager object) {
         Session session = sessionFactory.openSession();

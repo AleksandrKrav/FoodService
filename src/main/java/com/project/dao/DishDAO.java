@@ -31,7 +31,6 @@ public class DishDAO implements CRUD<Dish> {
         Session session = sessionFactory.openSession();
         try {
             session.getTransaction().begin();
-
             session.persist(object);
             session.getTransaction().commit();
             return Long.valueOf(object.getId());
