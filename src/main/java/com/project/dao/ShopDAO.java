@@ -65,6 +65,7 @@ public class ShopDAO implements CRUD<Shop> {
     }
 
 
+
     public List<Shop> getByManagerId(Long id) {
         Session session = sessionFactory.openSession();
         List<Shop> shops = null;

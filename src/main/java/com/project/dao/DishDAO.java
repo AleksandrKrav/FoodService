@@ -62,6 +62,24 @@ public class DishDAO implements CRUD<Dish> {
         return dish;
     }
 
+    public List<Dish> getByShopId(Long id) {
+        Session session = sessionFactory.openSession();
+        List<Dish> dishes = null;
+        try {
+            session.getTransaction().begin();
+            dishes =  session.createQuery("from Dish d where d.shop.id = :shopId")
+                    .setParameter("shopId", id).list();
+            session.getTransaction().commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        finally {
+            session.close();
+        }
+        return dishes;
+    }
+
     @Override
     public void update(Dish object)  {
         Session session = sessionFactory.openSession();

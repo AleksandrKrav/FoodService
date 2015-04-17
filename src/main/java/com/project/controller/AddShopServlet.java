@@ -36,6 +36,7 @@ public class AddShopServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userLogin = req.getParameter("userLogin");
+
         System.out.println("userLogin in the AddSHOPServ" + userLogin);
         req.setAttribute("userLogin", userLogin);
         ManagerDAO managerDAO = ManagerDAO.getInstance();
@@ -71,19 +72,6 @@ public class AddShopServlet extends HttpServlet {
         shopDAO.create(shop);
         fileContent.close();
 
-//        req.getRequestDispatcher("/ProfileServlet").forward(req, resp);
+        req.getRequestDispatcher("/ProfileServlet").forward(req, resp);
     }
-
-//    public Manager getManager(String login) {
-//        Manager manager = null;
-//        ManagerDAO managerDAO = ManagerDAO.getInstance();
-//        List<Manager> list = managerDAO.getAll();
-//        for (ListIterator<Manager> i = list.listIterator(); i.hasNext(); ) {
-//            Manager manager1 = i.next();
-//            if (manager1.getLogin().equals(login)) {
-//                manager = manager1;
-//            }
-//        }
-//        return manager;
-//    }
 }

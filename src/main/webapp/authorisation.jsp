@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -8,11 +9,12 @@
     <title> Авторизаційна форма</title>
 </head>
 <body>
+
 <nav class = "nav-primary" role = "navigation">
     <ul role = "menubar">
         <li role = "presentation"><a href = "index.jsp" role = "menuitem">Головна</a></li>
-        <li role = "presentation"><a href = "shopList.jsp" role = "menuitem">Список кафе</a></li>
-        <li role = "presentation"><a href = "profile.jsp" role = "menuitem">Профіль</a></li>
+        <li role = "presentation"><a href = "ShopListServlet" role = "menuitem">Список кафе</a></li>
+        <li role = "presentation"><a href = "ProfileServlet" role = "menuitem">Профіль</a></li>
 
     </ul>
 </nav>
@@ -24,9 +26,16 @@
             <p class="edit_point"><input id="userLogin" name="userLogin"  type="text" placeholder="Введіть логін" required></p>
             <p class="edit_point">Пароль</p>
             <p class="edit_point"><input id="password" name="password" type="text" placeholder="Введіть пароль"></p>
-            <button id="submitInfo" type="submit"><p>Авторизуватися</p></button>
+            <%--<form action="RedirectToProfileServlet?userLogin=${userLogin}"--%>
+                  <%--method="post">--%>
+                <%--<input type="submit" id="submitInfo5" name="add" value="Авторизуватися">--%>
+            <%--</form>--%>
+            <button id="submitInfo3" type="submit" ><p>Авторизуватися</p></button>
+            <a id="signUplink" href="registration.jsp" title="SignUp"><img src="img/signup_icon.png" width="40" height="40"/></a>
         </form>
-        <p  class="edit_point" style="font-size: 20px;">Зареєтруватися:  <a href="registration.jsp"><img src="img/signup_icon.png" width="32" height="32"  /></a></p>
+        <br>
+
+
     </div>
 </div>
 

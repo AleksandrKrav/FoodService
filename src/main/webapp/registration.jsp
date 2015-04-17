@@ -11,8 +11,8 @@
 <nav class = "nav-primary" role = "navigation">
     <ul role = "menubar">
         <li role = "presentation"><a href = "index.jsp" role = "menuitem">Головна</a></li>
-        <li role = "presentation"><a href = "shopList.jsp" role = "menuitem">Список кафе</a></li>
-        <li role = "presentation"><a href = "profile.jsp" role = "menuitem">Профіль</a></li>
+        <li role = "presentation"><a href = "ShopListServlet" role = "menuitem">Список кафе</a></li>
+        <li role = "presentation"><a href = "ProfileServlet" role = "menuitem">Профіль</a></li>
 
     </ul>
 </nav>
@@ -32,12 +32,8 @@
             <p class="edit_point"><input id="name" name="name" type="text" placeholder="Введіть своє ім'я"></p>
             <p class="edit_point">Фото</p>
             <p class="edit_point"><input class="photo" name="userPhoto"  id="photoUser" type="file" accept="image/*" size = "50px" /></p>
-            <p class="edit_point"><input type = "submit" name = "register" value="Зареєструватись"></p>
-            <p class="edit_point"><input type = "submit" name = "cancel" value="Скасувати"></p>
-
-            <%--<button type="button" onclick="history.back()"><a href=""><img src="img/cancel.png"  /></a></button>--%>
-                <%--<button  id="submitAddUser" type="submit"><p >Зареєструватись</p></button></p>--%>
-        </form>
+            <p class="edit_point"><input type = "submit" id="submitInfo2" name = "register" value="Зареєструватись"><input type = "submit" id="submitInfo2" name = "cancel" value="Скасувати"></p>
+            </form>
     </div>
 </div>
 </body>

@@ -3,15 +3,14 @@
 <head>
     <meta charset="utf-8f">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <%--<a href="ProfileServlet?userLogin=${userLogin}"></a>--%>
     <title> Створення нового кафе</title>
 </head>
 <body>
 <nav class = "nav-primary" role = "navigation">
     <ul role = "menubar">
         <li role = "presentation"><a href = "index.jsp" role = "menuitem">Головна</a></li>
-        <li role = "presentation"><a href = "shopList.jsp" role = "menuitem">Список кафе</a></li>
-        <li role = "presentation"><a href = "profile.jsp" role = "menuitem">Профіль</a></li>
+        <li role = "presentation"><a href = "ShopListServlet" role = "menuitem">Список кафе</a></li>
+        <li role = "presentation"><a href = "ProfileServlet" role = "menuitem">Профіль</a></li>
 
     </ul>
 </nav>
@@ -27,12 +26,9 @@
             <p class="edit_point"><input class="photo" name="photoShop" id="photoShop" type="file" accept="image/*" /></p>
             <p class="edit_point">Опис</p>
             <p class="edit_point"><input id="description" name="description" type="text" placeholder="Додайте опис(місто,кухня,особливості)"></p>
-            <p class="edit_point"><input type = "submit" name = "add" value="Додати"></p>
-            <%--<p class="edit_point"> <button id="submitAddShop" type="submit"><p>Send</p></button></p>--%>
+            <p class="edit_point"><input type = "submit" id="submitInfo"  name = "add" value="Додати"></p>
         </form>
     </div>
 </div>
-
-
 </body>
 </html>
