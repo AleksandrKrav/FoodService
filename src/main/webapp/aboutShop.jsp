@@ -28,20 +28,13 @@
 
             <p>Опис : ${shop.description}</p>
 
-            <a href="RedirectToAddDishServlet?shopId=${shop.id}">Додати страву</a>
-
-
-        <%--<form action="RedirectToAddDishServlet?shopId=${shopId}"--%>
-                  <%--method="post">--%>
-                <%--<input type="submit" id="submitInfo5" name="addDish" value="Додати страву">--%>
-            <%--</form>--%>
-
+            <a href="RedirectToAddDishServlet?shopId=${shop.id}" class="logOutButton">Додати страву</a>
             <c:forEach items="${dishList}" var="dish">
                 <div>
                     <p>Страва : ${dish.name} Ціна : ${dish.price}</p>
                 </div>
             </c:forEach>
-
+            <br>
         </form>
     </div>
 </div>

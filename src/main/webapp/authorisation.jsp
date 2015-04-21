@@ -26,10 +26,6 @@
             <p class="edit_point"><input id="userLogin" name="userLogin"  type="text" placeholder="Введіть логін" required></p>
             <p class="edit_point">Пароль</p>
             <p class="edit_point"><input id="password" name="password" type="text" placeholder="Введіть пароль"></p>
-            <%--<form action="RedirectToProfileServlet?userLogin=${userLogin}"--%>
-                  <%--method="post">--%>
-                <%--<input type="submit" id="submitInfo5" name="add" value="Авторизуватися">--%>
-            <%--</form>--%>
             <button id="submitInfo3" type="submit" ><p>Авторизуватися</p></button>
             <a id="signUplink" href="registration.jsp" title="SignUp"><img src="img/signup_icon.png" width="40" height="40"/></a>
         </form>

@@ -29,8 +29,6 @@
             <p class="edit_point"><input id="dishName" name="name" type="text" placeholder="Введіть назву страви" ></p>
             <p class="edit_point">Ціна</p>
             <p class="edit_point"><input id="dishPrice" name="price" type="text" placeholder="Встановіть ціну"></p>
-            <%--<p class="edit_point">Опис</p>--%>
-            <%--<p class="edit_point"><input id="description" name="description" type="text" placeholder="Введіть опис страви" ></p>--%>
             <button id="submitDish" type="submit">Додати</button>
         </form>
     </div>

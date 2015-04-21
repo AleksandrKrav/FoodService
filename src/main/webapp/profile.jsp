@@ -17,7 +17,9 @@
 </nav>
 <div class="context">
     <div class="centralbar">
+        <br>
         <c:if test='<%=session.getAttribute("isAuthenticated") != null && (Boolean)session.getAttribute("isAuthenticated")%>'>
+            <a href="LogOutServlet" class="logOutButton" >Вийти</a>
             <form action="ProfileServlet" enctype="multipart/form-data" method="post">
                 <%--<p class="edit_point"><input type="submit" name="logOut" value="Вийти"></p>--%>
 
@@ -38,7 +40,7 @@
                 <c:forEach items="${shopList}" var="shop">
                     <div>
                         <%--<form action="AboutShopServlet?shopId=${shop.id}" method="post">--%>
-                            Кафе: ${shop.name}
+                            Кафе:
                             <%--<input type="submit" id="submitInfo5" name="information" value="про кафе">--%>
                             <a href="AboutShopServlet?shopId=${shop.id}"> ${shop.name}</a>
                         <%--</form>--%>

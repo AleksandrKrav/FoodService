@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by Oleksandr on 4/7/2015.
+ * Створено Oleksandr on 4/7/2015.
  */
 @Entity
 @Table(name = "manager")
@@ -28,9 +28,11 @@ public class Manager {
     public Manager() {
     }
 
-    //    @OneToMany(fetch = FetchType.EAGER, mappedBy = "manager", cascade = CascadeType.ALL)
-//    private Set<Shop> shops = new HashSet<>();
-
+    /**
+     * Метод вернає айді менеджера
+     *
+     * @return
+     */
     public Long getId() {
         return id;
     }
